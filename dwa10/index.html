@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="/dwa9/scripts.js" defer></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.8.0/cdn/themes/light.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.8.0/cdn/themes/light.css"
+    />
+  </head>
+  <body>
+    <header>Tally App</header>
+    <div id="output">Answer</div>
+    <sl-input id="input">Input</sl-input>
+    <sl-range
+      id="rangeSlider"
+      help-text="control the numbers"
+      tooltip="bottom"
+      min="-10"
+      max="10"
+      style="
+        --track-color-active: var(--sl-color-primary-600);
+        --track-color-inactive: var(--sl-color-primary-100);
+        --track-active-offset: 50%;
+      "
+    ></sl-range>
+
+    <sl-button id="plus">Add 1</sl-button>
+    <sl-button id="minus">Minus 1</sl-button>
+    <sl-button id="equals"> Reset </sl-button>
+    <!-- Add this div element where you want to display the output -->
+
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.8.0/cdn/shoelace-autoloader.js"
+    ></script>
+  </body>
+</html>

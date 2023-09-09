@@ -3,6 +3,8 @@ import {
   html,
   css,
 } from "https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js";
+import styles.css from "./styles.css"
+
 
 export class TallyApp extends LitElement {
   static styles = css`
@@ -33,11 +35,16 @@ export class TallyApp extends LitElement {
     super();
     this.count = 0; // Initialize the count property to 0
   }
-
+  /* 
+    increment and decrement methods are 
+    called and then updates the count state
+  */
   increment() {
     if (this.count < 10) {
       this.count += 1;
       this.requestUpdate("count");
+    } else {
+      alert("cannot exceed 10");
     }
   }
 
@@ -45,6 +52,8 @@ export class TallyApp extends LitElement {
     if (this.count > -5) {
       this.count -= 1;
       this.requestUpdate("count");
+    } else {
+      alert("cannot exceed -5");
     }
   }
 
@@ -71,8 +80,10 @@ export class TallyApp extends LitElement {
       <div>
         <h1>Tally App</h1>
         <p class="${this.counterState}">Counter: ${this.count}</p>
-        <button @click="${this.increment}">Increment</button>
-        <button @click="${this.decrement}">Decrement</button>
+        <button @click="${this.increment}">+</button>
+
+        <button @click="${this.decrement}">-</button>
+        <sl-button variant="success" size="large" outline>Reset</sl-button>
       </div>
     `;
   }
